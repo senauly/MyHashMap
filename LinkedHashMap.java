@@ -40,9 +40,11 @@ public class LinkedHashMap<K,V> implements KWHashMap<K,V>{
      * @param key The key
      * @param value The value for this key
      * @return The value of this key if exist; otherwise, null.
+     * @throws NullPointerException if key or value is null.
     */
     @Override
     public V put(K key, V value) {
+        if(key == null || value == null) throw new NullPointerException();
         int index = key.hashCode() % table.length;
         if (index < 0) index += table.length;
         if (table[index] == null) table[index] = new LinkedList<>();
@@ -79,6 +81,7 @@ public class LinkedHashMap<K,V> implements KWHashMap<K,V>{
                 V oldVal = temp.getValue();
                 it.remove();
                 if(table[index].isEmpty()) table[index] = null;
+                numKeys--;
                 return oldVal;
             }
         }

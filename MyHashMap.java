@@ -114,42 +114,4 @@ import java.util.Set;
             return(count < size());
         }
     }
-
-    
-    public static void main(String[] args) {
-        MyHashMap<Integer,Integer> a = new MyHashMap<>();
-        a.put(1, 11);
-        a.put(2, 22);
-        a.put(3, 33);
-        a.put(4, 44);
-
-        MyMapIterator<Integer> it = a.mapIterator(3);
-
-        while(it.hasNext()){
-            int temp = it.prev();
-            System.out.println(temp);
-        }
-
-        System.out.println("prev: " + it.prev());
-        System.out.println("next: " + it.next());
-        System.out.println("next: " + it.next());
-        System.out.println("next: " + it.next());
-        System.out.println("next: " + it.next());
-        System.out.println("next: " + it.next());
-        System.out.println("prev: " + it.prev());
-        System.out.println("prev: " + it.prev());
-        System.out.println("prev: " + it.prev());
-        System.out.println("prev: " + it.prev());
-        System.out.println("prev: " + it.prev());
-        System.out.println("prev: " + it.prev());
-        System.out.println("prev: " + it.prev());
-        System.out.println("next: " + it.next());
-        System.out.println("next: " + it.next());
-        System.out.println("next: " + it.next());
-        System.out.println("next: " + it.next());
-        System.out.println("next: " + it.next());
-        System.out.println("next: " + it.next());
-        System.out.println("next: " + it.next());
-        System.out.println("next: " + it.next());
-    }
 }

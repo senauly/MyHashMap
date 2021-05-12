@@ -4,7 +4,7 @@ import java.util.TreeSet;
 /**
  * TreeHashMap Class which is hashing by using TreeSet to chain items on the same table slot.
  */
-public class TreeHashMap<K,V> implements KWHashMap<K,V>{
+public class TreeHashMap<K extends Comparable<K>,V> implements KWHashMap<K,V>{
     private TreeSet<Entry<K,V>>[] table;
     private int numKeys;
     private static final int CAPACITY = 101;
@@ -39,9 +39,12 @@ public class TreeHashMap<K,V> implements KWHashMap<K,V>{
      * @param key The key
      * @param value The value for this key
      * @return The value of this key if exist; otherwise, null.
+     * @throws NullPointerException if key or value is null.
+     * 
     */
     @Override
     public V put(K key, V value) {
+        if(key == null || value == null) throw new NullPointerException();
         int index = key.hashCode() % table.length;
         if (index < 0) index += table.length;
         if (table[index] == null) table[index] = new TreeSet<>();
@@ -78,10 +81,10 @@ public class TreeHashMap<K,V> implements KWHashMap<K,V>{
                 V oldVal = temp.getValue();
                 it.remove();
                 if(table[index].isEmpty()) table[index] = null;
+                numKeys--;
                 return oldVal;
             }
         }
-
         return null;
     }
 
@@ -122,7 +125,7 @@ public class TreeHashMap<K,V> implements KWHashMap<K,V>{
     }
 
     /** Contains key-value pairs for a hash table. */
-    private static class Entry < K, V > {
+    private static class Entry <K extends Comparable<K>,V> implements Comparable<Entry<K,V>> {
         private K key;
         private V value;
 
@@ -157,6 +160,13 @@ public class TreeHashMap<K,V> implements KWHashMap<K,V>{
             V oldVal = value;
             value = val;
             return oldVal;
+        }
+
+        @Override
+        public int compareTo(Entry<K,V> o) {
+            if(this.getKey().compareTo(o.getKey()) < 0) return -1;
+            if(this.getKey().compareTo(o.getKey()) > 0) return 1;
+            else return 0;
         }
     }
     

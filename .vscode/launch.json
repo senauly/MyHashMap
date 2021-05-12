@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "HW5_249219bc"
+        },
+        {
+            "type": "java",
+            "name": "Launch CoalescedHashMap",
+            "request": "launch",
+            "mainClass": "CoalescedHashMap",
+            "projectName": "HW5_249219bc"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
