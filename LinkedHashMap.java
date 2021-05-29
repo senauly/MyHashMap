@@ -4,7 +4,8 @@ import java.util.LinkedList;
 /**
  * LinkedHashMap Class which is hashing by using linked lists to chain items on the same table slot.
  */
-public class LinkedHashMap<K,V> implements KWHashMap<K,V>{
+
+ public class LinkedHashMap<K,V> implements KWHashMap<K,V>{
 
     private LinkedList<Entry<K,V>>[] table;
     private int numKeys;

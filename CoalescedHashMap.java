@@ -1,5 +1,6 @@
 /**
- * CoalescedHashMap Class which is using Coalesced hashing technique. 
+ * CoalescedHashMap Class which is using Coalesced hashing technique.
+ * @author Sena Ulukaya
  */
 public class CoalescedHashMap<K,V> implements KWHashMap<K,V>{
 
@@ -218,48 +219,4 @@ public class CoalescedHashMap<K,V> implements KWHashMap<K,V>{
             return("Key: " + getKey() + "\tNext: " + nextIndex);
         }
     }
-
-    public static void main(String[] args) {
-        CoalescedHashMap<Integer,Integer> a = new CoalescedHashMap<>();
-        a.put(3, 1);
-        System.out.println(a.toString());
-        a.put(12, 2);
-        System.out.println(a.toString());
-        a.put(13, 1);
-        System.out.println(a.toString());
-        a.put(25, 1);
-        System.out.println(a.toString());
-        a.put(23, 1);
-        System.out.println(a.toString());
-        a.put(51, 15);
-        System.out.println(a.toString());
-        a.put(42, 1);
-        System.out.println(a.toString());
-        a.put(33,12);
-        System.out.println(a.toString());
-        a.remove(13);
-
-        System.out.println(a.toString());
-        System.out.println(a.get(51));
-        System.out.println(a.get(33));
-        System.out.println(a.get(22));
-        System.out.println(a.isEmpty());
-        System.out.println(a.size());
-
-        a.remove(3);
-        a.remove(12);
-        a.remove(25);
-        a.remove(23);
-        a.remove(51);
-        a.remove(42);
-        a.remove(33);
-
-        System.out.println(a.toString());
-        System.out.println(a.get(51));
-        System.out.println(a.get(33));
-        System.out.println(a.get(22));
-        System.out.println(a.isEmpty());
-        System.out.println(a.size());
-    }
-    
 }
