@@ -22,14 +22,13 @@ It also contains KWHaspMap interface from the book "Data Structures: Abstraction
 
 I tested all the methods as follows:
 
-* Iterator:
-  1- Iterated through all the keys and showed that next and previous returns specified values.
-  2- Tested with existing keys and non-existing keys as constructor parameter and with the no-parameter constructor.
+* Iterator: 
+  - 1- Iterated through all the keys and showed that next and previous returns specified values.
+  - 2- Tested with existing keys and non-existing keys as constructor parameter and with the no-parameter constructor.
   
 * KWHashMap:
-  1- Demonstrated how CoalescedHashMap works with the small data.
-  2- Used small(1000), medium(10.000), and large-sized(100.000) data and perform different tasks over the tables to compare their performance results by comparing their running   times. 
-  (like accessing existing/non-existing items or adding/removing items)
+  - 1- Demonstrated how CoalescedHashMap works with the small data.
+  - 2- Used small(1000), medium(10.000), and large-sized(100.000) data and perform different tasks over the tables to compare their performance results by comparing their running times. (like accessing existing/non-existing items or adding/removing items)
 
 
 
